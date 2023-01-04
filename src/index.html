@@ -18,10 +18,22 @@
   <body>
     <header>
       <div class="navbar">
-       
-        <a href="#" class="navbar__works mynav">Works</a>
-        <a href="#" class="navbar__blogs mynav">Blogs</a>
-        <a href="#" class="navbar__contact mynav">Contact</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#feautured-works" class="navbar__works nav-link">Works</a>
+          </li>
+          <li class="nav-item">
+            <a href="#recent-posts" class="navbar__blogs nav-link">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="navbar__contact nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
     </header>
     <div class="main-content">
@@ -49,7 +61,7 @@
         </div>
       </section>
       <section class="recent-posts-container">
-        <div class="recent-posts">
+        <div class="recent-posts" id="recent-posts">
           <div class="recent-post__links">
             <p class="recent-posts_header--recent-posts">Recent posts</p>
             <p class="recent-posts_header--view-all" id="recent-post__view-all">
@@ -86,7 +98,7 @@
       </section>
 
       <section class="featured-works-container">
-        <div class="feautured-works">
+        <div class="feautured-works" id="feautured-works">
           <div class="feautured-works-header">
             <h6 id="feautured-works-header">Featured works</h6>
           </div>
@@ -164,7 +176,7 @@
         </div>
       </section>
       <footer>
-        <div class="footer-content">
+        <div class="footer-content" id="contact">
           <div class="footer__social-icon">
             <div class="footer__social-icon--fb">
               <img src="assets/images/fb.png" alt="" />
@@ -185,8 +197,19 @@
         </div>
       </footer>
     </div>
-    <script src="/scripts.js">
-    
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
     </script>
   </body>
 </html>
