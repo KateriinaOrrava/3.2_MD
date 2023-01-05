@@ -184,7 +184,7 @@ li {
   color: var(--dark);
   font-size: var(--xs-size);
   line-height: 24px;
-  max-width: 497px;
+  max-width: 90%;
 }
 .about-john__text {
   width: 554px;
@@ -269,6 +269,7 @@ li {
   flex-direction: row;
   gap: 20px;
   justify-content: center;
+  padding-bottom: 5%;
 }
 .recent-posts__first,
 .recent-posts__second {
